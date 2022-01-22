@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>了解机器学习 | JH</title>
+  <title>数据集归一化 | JH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -27,15 +27,15 @@
   </style>
 
 
-  <meta name="description" content="概念">
+  <meta name="description" content="机器学习数据集归一化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="了解机器学习">
-<meta property="og:url" content="http://example.com/2022/01/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1/index.html">
+<meta property="og:title" content="数据集归一化">
+<meta property="og:url" content="http://example.com/2022/01/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E9%9B%86%E5%BD%92%E4%B8%80%E5%8C%96/index.html">
 <meta property="og:site_name" content="JH">
-<meta property="og:description" content="概念">
+<meta property="og:description" content="机器学习数据集归一化">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-01-20T04:37:20.440Z">
-<meta property="article:modified_time" content="2022-01-20T04:39:55.380Z">
+<meta property="article:published_time" content="2022-01-22T12:44:54.973Z">
+<meta property="article:modified_time" content="2022-01-22T12:46:26.729Z">
 <meta property="article:author" content="Gyh">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
@@ -195,14 +195,18 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-机器学习主要任务" class="article article-type-post " itemscope itemprop="blogPost">
+  <i class="fa fa-thumb-tack"></i>
+  <font color=7D26CD>置顶</font>
+  <span class="post-meta-divider">|</span>
+
+<article id="post-机器学习数据集归一化" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      了解机器学习
+      数据集归一化
     </h1>
   
 
@@ -215,138 +219,52 @@
 
 
         
-        <a href="/2022/01/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2022-01-20T04:37:20.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-20</time>
+        <a href="/2022/01/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E9%9B%86%E5%BD%92%E4%B8%80%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2022-01-22T12:44:54.973Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 概念</p>
+        <p>机器学习数据集归一化</p>
 <span id="more"></span>
-<h2 id="机器学习主要任务"><a href="#机器学习主要任务" class="headerlink" title="机器学习主要任务"></a>机器学习主要任务</h2><p>分类是机器学习的一项主要任务，主要是将实例数据划分到合适的分类中。</p>
-<p>机器学习的另外一项任务是回归，主要是预测数值型的数据，比如通过数据值拟合曲线等。</p>
-<p>分类和回归属于监督学习，这类算法必须知道预测什么，即目标变量的分类信息。与监督学习相对应的是无监督学习，此时数据没有类别信息，也不会给定目标值。在无监督学习中，将数据集合分成由类似的对象组成的多个类的过程称为“聚类”</p>
-<h3 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h3><table>
-<thead>
-<tr>
-<th>色泽</th>
-<th>根蒂</th>
-<th>敲声</th>
-<th>好瓜</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>青绿</td>
-<td>蜷缩</td>
-<td>浊响</td>
-<td>是</td>
-</tr>
-<tr>
-<td>乌黑</td>
-<td>蜷缩</td>
-<td>浊响</td>
-<td>是</td>
-</tr>
-<tr>
-<td>青绿</td>
-<td>硬挺</td>
-<td>清脆</td>
-<td>否</td>
-</tr>
-<tr>
-<td>乌黑</td>
-<td>稍蜷</td>
-<td>沉闷</td>
-<td>否</td>
-</tr>
-</tbody></table>
-<p>​       这是一系列关于西瓜的数据，这里的每个实体，或者每一行被称为一个样本或数据点，而每一列（用来描述这些实体的属性）则被称为特征。假如说，我们现在想通过色泽、根蒂、敲声这几个特征来区分一个西瓜是好瓜与不是好瓜，这就是一个分类问题。分类问题的目标是预测类别标签。在这个例子中，“是”与“否”则是预测类别的两个不同的标签。分类问题有时可分为二分类和多分类，西瓜的例子则是一个二分类问题，多分类指的是数据不止两个类别，它有多个类别。</p>
-<h3 id="回归："><a href="#回归：" class="headerlink" title="回归："></a>回归：</h3><p>回归任务的目标是预测一个连续值，编程术语叫作浮点数。假如说我们现在手里得到的是如下数据：</p>
-<table>
-<thead>
-<tr>
-<th>色泽</th>
-<th>根蒂</th>
-<th>敲声</th>
-<th>价格</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>青绿</td>
-<td>蜷缩</td>
-<td>浊响</td>
-<td>2.1</td>
-</tr>
-<tr>
-<td>乌黑</td>
-<td>蜷缩</td>
-<td>浊响</td>
-<td>1.9</td>
-</tr>
-<tr>
-<td>青绿</td>
-<td>硬挺</td>
-<td>清脆</td>
-<td>1.6</td>
-</tr>
-<tr>
-<td>乌黑</td>
-<td>稍蜷</td>
-<td>沉闷</td>
-<td>1.5</td>
-</tr>
-</tbody></table>
-<p>​      我们要通过色泽、根蒂、敲声来预测西瓜的价格，这就是一个回归问题。区分分类任务和回归任务有一个简单方法，就是看输出是否具有某种连续性。如果在可能的结果之间具有连续性，那么它就是一个回归问题，比如说价格。</p>
-<h3 id="聚类："><a href="#聚类：" class="headerlink" title="聚类："></a>聚类：</h3><p>​      聚类属于无监督学习，它是指我们的数据只有输入，没有输出，并需要从这些数据中提取知识。聚类算法将数据划分成不同的组，每组包含相似的样本。比如说：</p>
-<table>
-<thead>
-<tr>
-<th>色泽</th>
-<th>根蒂</th>
-<th>敲声</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>青绿</td>
-<td>蜷缩</td>
-<td>浊响</td>
-</tr>
-<tr>
-<td>乌黑</td>
-<td>蜷缩</td>
-<td>浊响</td>
-</tr>
-<tr>
-<td>青绿</td>
-<td>硬挺</td>
-<td>清脆</td>
-</tr>
-<tr>
-<td>乌黑</td>
-<td>稍蜷</td>
-<td>沉闷</td>
-</tr>
-</tbody></table>
-<p>​      我们现在手里的数据只有色泽、根蒂、敲声这几个特征，我们通过这三个特征，把性状相似的西瓜分到一个组，这就是一个聚类问题。聚类问题与分类问题的本质区别就是有没有标签。</p>
-<h2 id="测试集和训练集"><a href="#测试集和训练集" class="headerlink" title="测试集和训练集"></a>测试集和训练集</h2><h3 id="为什么要有训练集与测试集"><a href="#为什么要有训练集与测试集" class="headerlink" title="为什么要有训练集与测试集"></a>为什么要有训练集与测试集</h3><p>​          我们想要利用收集的西瓜数据构建一个机器学习模型，用来预测新的西瓜的好坏，但在将模型用于新的测量数据之前，我们需要知道模型是否有效，也就是说，我们是否应该相信它的预测结果。不幸的是，我们不能将用于构建模型的数据用于评估模型的性能。因为我们的模型会一直记住整个训练集，所以，对于训练集中的任何数据点总会预测成正确的标签。这种记忆无法告诉我们模型的泛化能力如何，即预测新样本的能力如何。我们要用新数据来评估模型的性能。新数据是指模型之前没见过的数据，而我们有这些新数据的标签。通常的做法是，我们把手头上的数据分为两部分，训练集与测试集。训练集用来构建机器学习模型，测试集用来评估模型性</p>
-<h5 id="如何划分训练集与测试集"><a href="#如何划分训练集与测试集" class="headerlink" title="如何划分训练集与测试集"></a>如何划分训练集与测试集</h5><p>​         通常我们将手头数据的百分之 70 或 80 用来训练数据，剩下的百分之 30 或 20 作为测试用来评估模型性能。值得注意的是，在划分数据集之前，我们要先把手头上的数据的顺序打乱，因为我们搜集数据时，数据可能是按照标签排放的。比如，现在有 100 个西瓜的数据，前 50 个是好瓜，后 50 个是坏瓜，如果将后面的 30 个西瓜数据当做测试集，这时测试集中只有坏瓜一个类别，这无法告诉我们模型的泛化能力如何，所以我们将数据打乱，确保测试集中包含所有类别的数据。</p>
-<h2 id="欠拟合与过拟合"><a href="#欠拟合与过拟合" class="headerlink" title="欠拟合与过拟合"></a>欠拟合与过拟合</h2><h5 id="什么是欠拟合与欠拟合的原因"><a href="#什么是欠拟合与欠拟合的原因" class="headerlink" title="什么是欠拟合与欠拟合的原因"></a>什么是欠拟合与欠拟合的原因</h5><ul>
-<li>欠拟合：模型在训练集上误差很高；</li>
-<li>欠拟合原因：模型过于简单，没有很好的捕捉到数据特征，不能很好的拟合数据。</li>
+
+<h4 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h4><p>当出现欠拟合和过度拟合的情况下如何处理：</p>
+<p><strong>有两种方式：</strong></p>
+<p><strong>1. 丢弃一些不能帮助我们正确预测的特征。采用的方法如下：</strong></p>
+<ul>
+<li> <strong>手工选择保留哪些特征。</strong></li>
+<li><strong>使用一些模型选择算法来帮忙降维。（例如PCA等）</strong></li>
 </ul>
-<h5 id="什么是过拟合与过拟合的原因"><a href="#什么是过拟合与过拟合的原因" class="headerlink" title="什么是过拟合与过拟合的原因"></a>什么是过拟合与过拟合的原因</h5><ul>
-<li><p>过拟合：在训练集上误差低，测试集上误差高；</p>
-</li>
-<li><p>过拟合原因：模型把数据学习的太彻底，以至于把噪声数据的特征也学习到了，这样就会导致在后期测试的时候不能够很好地识别数据，模型泛化能力太差。</p>
-</li>
+<p><strong>2. 归一化处理</strong></p>
+<ul>
+<li> <strong>保留所有的特征，但是减少参数的大小（或者是说：减少参数的重要性）</strong></li>
 </ul>
-<h2 id="验证集与交叉验证"><a href="#验证集与交叉验证" class="headerlink" title="验证集与交叉验证"></a>验证集与交叉验证</h2><h5 id="为什么需要验证集"><a href="#为什么需要验证集" class="headerlink" title="为什么需要验证集"></a>为什么需要验证集</h5><p>​       在机器学习中，通常需要评估若⼲候选模型的表现并从中选择模型。这⼀过程称为模型选择。可供选择的候选模型可以是有着不同超参数的同类模型。以神经网络为例，我们可以选择隐藏层的个数，学习率大小和激活函数。为了得到有效的模型，我们通常要在模型选择上下⼀番功夫。从严格意义上讲，测试集只能在所有超参数和模型参数选定后使⽤⼀次。不可以使⽤测试数据选择模型，如调参。由于⽆法从训练误差估计泛化误差，因此也不应只依赖训练数据选择模型。鉴于此，我们可以预留⼀部分在训练数据集和测试数据集以外的数据来进⾏模型选择。这部分数据被称为验证数据集，简称验证集。</p>
-<p>​      为了方便大家理解，举一个生活中的案例进行类比，我们一般是通过考试衡量学生的学习情况。老师上完课后，给学生布置的作业相当于训练数据集，中期的测试题相当于验证集，期末考试题相当于测试数据集。为了更加客观的衡量学生学习情况，期末考试题的内容不应该出现在平常的作业题和中期的测试题中，因为之前做过的题，对于计算机而言，相当于已经记住了，如果再次做同样的题，准确率就会很高。同样的道理，平常的作业题也不应该出现在中期的测试题里。中期的测试题，是为了掌握学生的学习情况，了解自己哪些方面内容没掌握，从而调整下一步学习的方向，为期末考试做好准备。</p>
-<h5 id="k折交叉验证"><a href="#k折交叉验证" class="headerlink" title="k折交叉验证"></a>k折交叉验证</h5><p>​     由于验证数据集不参与模型训练，当训练数据不够⽤时，预留⼤量的验证数据显得太奢侈。⼀种改善的⽅法是 K 折交叉验证。在 K 折交叉验证中，我们把原始训练数据集分割成 K 个不重合的⼦数据集，然后我们做K次模型训练和验证。每⼀次，我们使⽤⼀个⼦数据集验证模型，并使⽤其它 K−1 个⼦数据集来训练模型。在这 K 次训练和验证中，每次⽤来验证模型的⼦数据集都不同。最后，我们对这 K 次训练误差和验证误差分别求平均。 k 的值由我们自己来指定</p>
-<p>​    还是以考试为例，交叉验证，相当于把平常的作业题和中期的测试题合并成一个题库，然后等分成几份。将题库分成了五份，第一行的意思是，先让学生做后面的四份训练题，再用第一份题进行测试。以此类推，再重复四次，每一次相当于重新进行学习。最后，取五次的平均成绩，平均成绩高，说明老师的教学方法好，对应到模型，就是超参数更好。</p>
-<p>待完善……..</p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>​      不同的评价指标往往具有不同的量纲（例如：对于评价房价来说量纲指：面积、房价数、楼层等；对于预测某个人患病率来说量纲指：身高、体重等。）和量纲单位（例如：面积单位：平方米、平方厘米等；身高：米、厘米等），这样的情况会影响到数据分析的结果，为了消除指标之间量纲的影响，需要进行数据标准化处理，以解决数据指标之间的可比性。原始数据经过数据标准化处理后，各指标处于同一数量级，适合进行综合对比评价。</p>
+<h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><p><strong>（1）归一化后加快了梯度下降求最优解的速度。</strong></p>
+<p><strong>（2）归一化有可能提高精度（归一化是让不同维度之间的特征在数值上有一定的比较性）。</strong></p>
+<h5 id="理解-1-："><a href="#理解-1-：" class="headerlink" title="理解(1)："></a>理解(1)：</h5><p>   例子：假定为了预测房子价格，自变量为面积，房间数两个，因变量为房价。</p>
+<p>那么可以得到的公式为：<br>$$<br>y=\theta_1x_1+\theta_2x_2<br>$$<br>其中x1代表房子的面积,x2代表房间的多少,那么前面的就是他们的系数</p>
+<p>假如有一张图,我们很容易看出，当数据没有归一化的时候，面积数的范围可以从0-1000，房间数的范围一般为0-10，可以看出面积数的取值范围远大于房间数。</p>
+<h6 id="归一化和没有归一化的影响："><a href="#归一化和没有归一化的影响：" class="headerlink" title="归一化和没有归一化的影响："></a>归一化和没有归一化的影响：</h6><p>是否进行归一化产生的影响在于形成损失函数的时候：</p>
+<p>​    如果数据没有进行归一化：<br>$$<br>J=(10\theta_1+600\theta_2-y)^2<br>$$<br>   当数据归一化以后为：<br>$$<br>J=(0.5\theta_1+0.55\theta_2-y)^2<br>$$<br>  其中变量的前面系数都在【0-1】范围之间。</p>
+<h5 id="理解-2"><a href="#理解-2" class="headerlink" title="理解(2):"></a>理解(2):</h5><p>​     归一化有可能提高精度（归一化是让不同维度之间的特征在数值上有一定的比较性）.一些分类器需要计算样本之间的距离（如欧式距离），例如KNN。如果一个特征值域范围非常大，那么距离计算就主要取决于这个特征，从而与实际情况不符。（比如，这时实际情况是值域范围小的特征更重要）。</p>
+<h3 id="两种常用的归一化方法："><a href="#两种常用的归一化方法：" class="headerlink" title="两种常用的归一化方法："></a>两种常用的归一化方法：</h3><h4 id="（1）min-max标准化"><a href="#（1）min-max标准化" class="headerlink" title="（1）min-max标准化"></a>（1）min-max标准化</h4><p>min-max标准化（Min-Max Normalization）（线性函数归一化）</p>
+<h5 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h5><p>   也称为离差标准化，是对原始数据的线性变换，使得结果映射到0-1之间。</p>
+<h5 id="本质："><a href="#本质：" class="headerlink" title="本质："></a>本质：</h5><p>​     把数变为(0,1)之间的小数。转换函数：（X-Min）/(Max-Min)如果想要将数据映射到(-1,1)，则将公式换成: (X-Mean）/(Max-Min)其中：max为样本数据的最大值，min为样本数据的最小值，Mean表示数据的均值。</p>
+<h5 id="缺陷："><a href="#缺陷：" class="headerlink" title="缺陷："></a>缺陷：</h5><p>当有新数据加入时，可导致max和min的变化，需要重新定义。</p>
+<h4 id="（2）Z-score标准化方法"><a href="#（2）Z-score标准化方法" class="headerlink" title="（2）Z-score标准化方法"></a>（2）Z-score标准化方法</h4><p> 均值标准化（Z-score standardization）</p>
+<h5 id="定义：-1"><a href="#定义：-1" class="headerlink" title="定义："></a>定义：</h5><p>​    这种方法给与原始数据的均值（mean）和标准差（standard deviation）进行数据的标准化。经过处理的数据符合标准正态分布，即均值为0，标准差为1.</p>
+<h5 id="本质：-1"><a href="#本质：-1" class="headerlink" title="本质："></a>本质：</h5><p>   把有量纲表达式变成无量纲表达式。转换函数：（X-Mean）/(Standard deviation)其中，Mean为所有样本数据的均值。Standard deviation为所有样本数据的标准差。</p>
+<h3 id="两种归一化方法的使用场景"><a href="#两种归一化方法的使用场景" class="headerlink" title="两种归一化方法的使用场景"></a>两种归一化方法的使用场景</h3><p>（1）在分类、聚类算法中，需要使用距离来度量相似性的时候、或者使用PCA技术进行降维的时候，第二种方法(Z-score standardization)表现更好。</p>
+<p>因为：第一种方法(线性变换后)，其协方差产生了倍数值的缩放，因此这种方式无法消除量纲对方差、协方差的影响，对PCA分析影响巨大；同时，由于量纲的存在，使用不同的量纲、距离的计算结果会不同。</p>
+<p>（2）在不涉及距离度量、协方差计算、数据不符合正太分布的时候，可以使用第一种方法或其他归一化方法。比如图像处理中，将RGB图像转换为灰度图像后将其值限定在（0 ，255）的范围。</p>
+<p>因为：第二种归一化方式中，新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0、方差1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>（1）使用Max-Min标准化后，其协方差产生了倍数值得缩放，因此这种方式无法消除量纲对方差、协方差的影响，对PCA分析影响巨大；同时由于量纲的存在，使用不同的量纲，距离的计算结果会不同。</p>
+<p>（2）在Z-score标准化（0均值标准化）中，新的数据由于对方差进行了归一化，这时候每个维度的量纲其实已经等价了，每个维度都服从均值为0,、方差为1的正态分布，在计算距离的时候，每个维度都是去量纲化的，避免了不同量纲的选取对距离计算产生的巨大影响。</p>
+<p>总的来说，在算法后续计算中，涉及距离度量（聚类分析）或者协方差分析（PCA、LDA等）的，同时数据分布可以近似为状态分布，应当使用0均值化的归一方法。其它应用中，根据具体情况选用合适的归一化方法。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/program_developer/article/details/78637711">https://blog.csdn.net/program_developer/article/details/78637711</a></p>
 
       
 
@@ -384,6 +302,11 @@
       
     </div>
     <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
       
 	<div class="article-tag tagcloud">
@@ -447,7 +370,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/01/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/01/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E9%9B%86%E5%BD%92%E4%B8%80%E5%8C%96/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -461,18 +384,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/01/21/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          多元线性回归
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/01/19/C++%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++核心编程</div>
+    <a href="/2022/01/22/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++运算符重载</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -499,7 +413,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text">机器学习主要任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">回归：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">聚类：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E9%9B%86%E5%92%8C%E8%AE%AD%E7%BB%83%E9%9B%86"><span class="toc-number">2.</span> <span class="toc-text">测试集和训练集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E8%AE%AD%E7%BB%83%E9%9B%86%E4%B8%8E%E6%B5%8B%E8%AF%95%E9%9B%86"><span class="toc-number">2.1.</span> <span class="toc-text">为什么要有训练集与测试集</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%92%E5%88%86%E8%AE%AD%E7%BB%83%E9%9B%86%E4%B8%8E%E6%B5%8B%E8%AF%95%E9%9B%86"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">如何划分训练集与测试集</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A0%E6%8B%9F%E5%90%88%E4%B8%8E%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-number">3.</span> <span class="toc-text">欠拟合与过拟合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AC%A0%E6%8B%9F%E5%90%88%E4%B8%8E%E6%AC%A0%E6%8B%9F%E5%90%88%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">什么是欠拟合与欠拟合的原因</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%87%E6%8B%9F%E5%90%88%E4%B8%8E%E8%BF%87%E6%8B%9F%E5%90%88%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">什么是过拟合与过拟合的原因</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E9%9B%86%E4%B8%8E%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="toc-number">4.</span> <span class="toc-text">验证集与交叉验证</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E9%AA%8C%E8%AF%81%E9%9B%86"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">为什么需要验证集</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#k%E6%8A%98%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">k折交叉验证</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">2.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">优点：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%86%E8%A7%A3-1-%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">理解(1)：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%BD%92%E4%B8%80%E5%8C%96%E5%92%8C%E6%B2%A1%E6%9C%89%E5%BD%92%E4%B8%80%E5%8C%96%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%9A"><span class="toc-number">3.1.1.</span> <span class="toc-text">归一化和没有归一化的影响：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%86%E8%A7%A3-2"><span class="toc-number">3.2.</span> <span class="toc-text">理解(2):</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%9A%84%E5%BD%92%E4%B8%80%E5%8C%96%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">两种常用的归一化方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89min-max%E6%A0%87%E5%87%86%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">（1）min-max标准化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">本质：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%BA%E9%99%B7%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">缺陷：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89Z-score%E6%A0%87%E5%87%86%E5%8C%96%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">（2）Z-score标准化方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A-1"><span class="toc-number">2.1.</span> <span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8%EF%BC%9A-1"><span class="toc-number">2.2.</span> <span class="toc-text">本质：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%BD%92%E4%B8%80%E5%8C%96%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number"></span> <span class="toc-text">两种归一化方法的使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number"></span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number"></span> <span class="toc-text">参考</span></a>
                     </div>
                 </span>
             </div>
