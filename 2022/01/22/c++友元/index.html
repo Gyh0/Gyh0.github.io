@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022/1 | JH</title>
+  <title>C++友元 | JH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -27,12 +27,17 @@
   </style>
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JH">
-<meta property="og:url" content="http://example.com/archives/2022/01/index.html">
+  <meta name="description" content="友元">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++友元">
+<meta property="og:url" content="http://example.com/2022/01/22/c++%E5%8F%8B%E5%85%83/index.html">
 <meta property="og:site_name" content="JH">
+<meta property="og:description" content="友元">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-22T03:53:58.141Z">
+<meta property="article:modified_time" content="2022-01-22T04:02:12.641Z">
 <meta property="article:author" content="Gyh">
+<meta property="article:tag" content="C++面向对象编程">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="JH" type="application/atom+xml">
@@ -194,35 +199,88 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-c++友元" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/22/c++%E5%8F%8B%E5%85%83/" class="archive-article-date">
-  	<time datetime="2022-01-22T03:53:58.141Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/22/c++%E5%8F%8B%E5%85%83/">C++友元</a>
+    <h1 class="article-title" itemprop="name">
+      C++友元
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+
+         
+
+           阅读数: 次   
+
+         
+
+
+        
+        <a href="/2022/01/22/c++%E5%8F%8B%E5%85%83/" class="archive-article-date">
+  	<time datetime="2022-01-22T03:53:58.141Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>友元</p>
+<span id="more"></span>
+
+<h3 id="全局函数做友元"><a href="#全局函数做友元" class="headerlink" title="全局函数做友元"></a>全局函数做友元</h3><h4 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">goodGay</span><span class="params">(Building *building)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="完整代码举例"><a href="#完整代码举例" class="headerlink" title="完整代码举例"></a>完整代码举例</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Building</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">//关键代码</span></span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">goodGay</span><span class="params">(Building *building)</span></span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Building</span>()</span><br><span class="line">	&#123;</span><br><span class="line">	   	m_SittingRoom=<span class="string">&quot;客厅&quot;</span>;</span><br><span class="line">	   	m_BedRoom=<span class="string">&quot;卧室&quot;</span>; </span><br><span class="line">	&#125; </span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_SittingRoom;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	string m_BedRoom;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//全局函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">goodGay</span><span class="params">(Building *building)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;好基友正在访问&quot;</span>&lt;&lt;building-&gt;m_SittingRoom&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;好基友正在访问&quot;</span>&lt;&lt;building-&gt;m_BedRoom&lt;&lt;endl;</span><br><span class="line">	 </span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Building b; </span><br><span class="line">	<span class="built_in">goodGay</span>(&amp;b);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类做友元"><a href="#类做友元" class="headerlink" title="类做友元"></a>类做友元</h3><h4 id="核心代码-1"><a href="#核心代码-1" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">GoodGay</span>;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="完整代码举例-1"><a href="#完整代码举例-1" class="headerlink" title="完整代码举例"></a>完整代码举例</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//声明 </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Building</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GoodGay</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">GoodGay</span>();</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">visit</span><span class="params">()</span></span>;<span class="comment">//参观函数，访问Building中的属性 </span></span><br><span class="line">	</span><br><span class="line">	Building *building;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Building</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="comment">//加上这个就可以表明是他的好朋友 ,然后就可以访问 </span></span><br><span class="line">	<span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">GoodGay</span>;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	</span><br><span class="line">    <span class="built_in">Building</span>();</span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_SittingRoom;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	string m_BedRoom;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Building构造函数在类外进行初始化 </span></span><br><span class="line">Building::<span class="built_in">Building</span>()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_SittingRoom=<span class="string">&quot;客厅&quot;</span>;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_BedRoom=<span class="string">&quot;卧室&quot;</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//GoodGay构造函数在类外进行初始化 </span></span><br><span class="line">GoodGay::<span class="built_in">GoodGay</span>()</span><br><span class="line">&#123;</span><br><span class="line">	building=<span class="keyword">new</span> Building;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在类外进行访问 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GoodGay::visit</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;好基友正在访问&quot;</span>&lt;&lt;building-&gt;m_SittingRoom&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;好基友正在访问&quot;</span>&lt;&lt;building-&gt;m_BedRoom&lt;&lt;endl;</span><br><span class="line">	 </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GoodGay b;</span><br><span class="line">	b.<span class="built_in">visit</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">test</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="成员函数做友元"><a href="#成员函数做友元" class="headerlink" title="成员函数做友元"></a>成员函数做友元</h3><h4 id="核心代码-2"><a href="#核心代码-2" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">GoodGay::visit</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="完整代码举例-2"><a href="#完整代码举例-2" class="headerlink" title="完整代码举例"></a>完整代码举例</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//成员函数做友元 </span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Building</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GoodGay</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">GoodGay</span>();</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">visit</span><span class="params">()</span></span>;<span class="comment">//成员函数 可以访问私有 </span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">visits</span><span class="params">()</span></span>;<span class="comment">//成员函数  不可以访问私有 </span></span><br><span class="line">	</span><br><span class="line">	Building *building;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Building</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">GoodGay::visit</span><span class="params">()</span></span>;<span class="comment">//成员函数做友元 </span></span><br><span class="line">	<span class="comment">//friend class GoodGay;//类做友元 </span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Building</span>();</span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_SittingRoom;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	string m_BedRoom;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//初始化Building构造函数 类外实现 </span></span><br><span class="line">Building::<span class="built_in">Building</span>()</span><br><span class="line">&#123;</span><br><span class="line">	m_SittingRoom=<span class="string">&quot;客厅&quot;</span>;</span><br><span class="line">	m_BedRoom=<span class="string">&quot;卧室&quot;</span>;	 </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//类外实现构造函数 </span></span><br><span class="line">GoodGay::<span class="built_in">GoodGay</span>()</span><br><span class="line">&#123;</span><br><span class="line">	building = <span class="keyword">new</span> Building;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GoodGay::visit</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;好基友正在访问: &quot;</span>&lt;&lt;building-&gt;m_SittingRoom&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;好基友正在访问: &quot;</span>&lt;&lt;building-&gt;m_BedRoom&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GoodGay::visits</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;好基友正在访问: &quot;</span>&lt;&lt;building-&gt;m_SittingRoom&lt;&lt;endl;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;&quot;好基友正在访问: &quot;&lt;&lt;building-&gt;m_BedRoom&lt;&lt;endl;//这个没有说明，则不可以访问私有 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GoodGay b;</span><br><span class="line">	b.<span class="built_in">visit</span>();</span><br><span class="line">	b.<span class="built_in">visits</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.JPG">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.JPG">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -234,361 +292,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/01/22/c++%E5%8F%8B%E5%85%83/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/21/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="archive-article-date">
-  	<time datetime="2022-01-21T12:13:40.007Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/01/21/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">多元线性回归</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/21/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">多元线性回归</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0%E5%81%9A%E5%8F%8B%E5%85%83"><span class="toc-number">1.</span> <span class="toc-text">全局函数做友元</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">核心代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.2.</span> <span class="toc-text">完整代码举例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%81%9A%E5%8F%8B%E5%85%83"><span class="toc-number">2.</span> <span class="toc-text">类做友元</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-1"><span class="toc-number">2.1.</span> <span class="toc-text">核心代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%E4%B8%BE%E4%BE%8B-1"><span class="toc-number">2.2.</span> <span class="toc-text">完整代码举例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%81%9A%E5%8F%8B%E5%85%83"><span class="toc-number">3.</span> <span class="toc-text">成员函数做友元</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-2"><span class="toc-number">3.1.</span> <span class="toc-text">核心代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%E4%B8%BE%E4%BE%8B-2"><span class="toc-number">3.2.</span> <span class="toc-text">完整代码举例</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2022-01-20T04:37:20.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-20</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1/">了解机器学习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/19/C++%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2022-01-19T02:45:59.239Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/19/C++%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/">C++核心编程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/18/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="archive-article-date">
-  	<time datetime="2022-01-18T11:43:18.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/18/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">一元线性回归</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/18/matplotlib/" class="archive-article-date">
-  	<time datetime="2022-01-18T03:25:11.331Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/18/matplotlib/">matplotlib</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/17/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/" class="archive-article-date">
-  	<time datetime="2022-01-17T09:19:52.700Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/17/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">梯度下降</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/17/numpy%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-01-17T08:47:18.689Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/17/numpy%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/">numpy</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/17/%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-01-17T06:40:42.914Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/17/%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/">高精度</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/16/hello-world/" class="archive-article-date">
-  	<time datetime="2022-01-16T14:55:11.498Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -665,8 +481,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
