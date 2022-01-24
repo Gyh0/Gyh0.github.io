@@ -35,7 +35,7 @@
 <meta property="og:description" content="矩阵分解">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-23T13:56:07.092Z">
-<meta property="article:modified_time" content="2022-01-23T14:17:06.029Z">
+<meta property="article:modified_time" content="2022-01-23T14:20:19.665Z">
 <meta property="article:author" content="Gyh">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
@@ -279,7 +279,7 @@
 </tbody></table>
 <p>A,B,C,D代表不同的电影。U代表用户，在这里电影的评分最高为5分，0代表该位用户没有看过这部电影，我们的目的就是通过矩阵分解预测该位用户对该电影的评分。</p>
 <h2 id="Talk-about"><a href="#Talk-about" class="headerlink" title="Talk about"></a>Talk about</h2><p>我们如何用矩阵分解来解决问题呢，简单来说就是：我们把原始矩阵分解成两个矩阵，然后这两个矩阵的乘积的结果为我们所预测的结果，那么我们用什么来进行呢，在这里用梯度下降来解决，我们都知道要进行梯度下降，肯定要对其求导，然后再不断迭代，所以我们首先需要构造损失函数。</p>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><h3 id="构造损失函数"><a href="#构造损失函数" class="headerlink" title="构造损失函数"></a>构造损失函数</h3><p> 以上面的评分为例来说明：使用原有的评分矩阵<strong>Rm×n</strong>与重新构建的评分矩阵<strong>R^m×n</strong>进行相减求的误差的平方作为损失函数，即为<br>$$<br>e_{ij}^2=(r_{ij}-r’<em>{ij})^2=(r</em>{ij}-\sum_{i=1}^np_{ik}q_{kj})^2<br>$$</p>
+<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><h3 id="构造损失函数"><a href="#构造损失函数" class="headerlink" title="构造损失函数"></a>构造损失函数</h3><p> 以上面的评分为例来说明：使用原有的评分矩阵<strong>Rm×n</strong>与重新构建的评分矩阵<strong>R^m×n</strong>进行相减求的误差的平方作为损失函数，即为<br>$$<br>e_{ij}^2=(r_{ij}-r_{ij}*)^2=(r_{ij}-\sum_{i=1}^np_{ik}q_{kj})^2<br>$$</p>
 <h3 id="对损失函数求导"><a href="#对损失函数求导" class="headerlink" title="对损失函数求导"></a>对损失函数求导</h3><p>$$<br>\frac{\partial}{p_{ik}}e^2_{ij}=2(r_{ij}-\sum_{i=1}^np_{ik}q_{kj})(-q_{kj})=-2e_{ij}q_{kj}<br>$$</p>
 <p>$$<br>\frac{\partial}{q_{kj}}e^2_{ij}=2(r_{ij}-\sum_{i=1}^np_{ik}q_{kj})(-p_{ik})=-2e_{ij}p_{ik}<br>$$</p>
 <h3 id="根据负梯度的方向更新变量"><a href="#根据负梯度的方向更新变量" class="headerlink" title="根据负梯度的方向更新变量"></a>根据负梯度的方向更新变量</h3><p>$$<br>p_{ik}=p_{ik}-\alpha\frac{\partial}{p_{ik}}e^2_{ij}=p_{ik}+2\alpha e_{ij}q_{kj}<br>$$</p>
@@ -660,11 +660,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
               </li>
              
               <li class="article-tag-list-item">
